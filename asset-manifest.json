@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e0124aab.css",
+    "main.js": "/static/js/main.f5968d93.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/agence-mna.png": "/static/media/agence-mna.aec0045ff576165abcc5.png",
+    "static/media/Bogart-Regular.ttf": "/static/media/Bogart-Regular.acb11b74a7aff91d79a7.ttf",
+    "static/media/switup.png": "/static/media/switup.cd05a35a6e3cb4fba101.png",
+    "index.html": "/index.html",
+    "main.e0124aab.css.map": "/static/css/main.e0124aab.css.map",
+    "main.f5968d93.js.map": "/static/js/main.f5968d93.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0124aab.css",
+    "static/js/main.f5968d93.js"
+  ]
+}
