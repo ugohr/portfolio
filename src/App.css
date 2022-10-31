@@ -1,38 +1,350 @@
-.App {
+@font-face {
+  font-family: 'Bogart';
+  src: url(./fonts/Bogart-Regular.ttf) format('truetype');
+}
+
+::selection {
+  background-color: #F093B033;
+}
+
+.app {
+  background-color: #111;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#content {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#intro {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-left: 15%;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+#intro-title {
+  font-family: 'Bogart';
+  color: #FFF;
+  background: linear-gradient(271deg, #F093B0 15%, #EDCA85 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 6.5em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#intro-subtitle {
+  font-family: 'Bogart';
+  color: #FFF;
+  font-size: 4em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#intro-contact {
+  position: relative;
+  font-style: normal;
+  font-family: 'Bogart';
+  font-size: 2em;
+  margin-top: 7%;
+  color: #FFF;
+  text-decoration: none;
+  transition: 0.2s;
+}
+#intro-contact:hover {
+  font-weight: bold;
+}
+#intro-contact::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(271deg, #F093B0 15%, #EDCA85 85%);
+  transform: rotateZ(-1.5deg);
+}
+
+.section-header {
+  display: flex;
+  padding-bottom: 42px;
+  width: 100vw;
+}
+.section-header:after {
+  content: '';
+  display: block;
+  width: 50%;
+  margin-top: 39px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: #222;
+}
+
+.section-title {
+  font-family: 'Bogart';
+  color: #FFF;
+  background: linear-gradient(271deg, #F093B0 15%, #EDCA85 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 46px;
+  font-weight: bold;
+}
+
+#sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  right: 0;
+  padding-right: 5%;
+  bottom: 10%;
+  background-color: transparent;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  line-height: 1.6em;
+}
+
+#links a {
+  color: #FFF;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 5s;
+}
+#links a:hover {
+  color: #FFF;
+  background: linear-gradient(271deg, #F093B0 15%, #EDCA85 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#logos {
+  padding-top: 42px;
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+}
+
+.logo {
+  filter: brightness(0) invert(1);
+}
+
+#skills, #experience {
+  padding-left: 15%;
+  padding-right: 15%;
+  min-height: 60vh;
+}
+
+#skills-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.skills-col {
+  width: 50%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.skills-col-title {
+  font-size: 20px;
+  color: #CCC;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.skill {
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 0px;
+  transition: 1s;
+}
+.skill-hidden {
+  opacity: 0;
+  margin-left: 30px;
+}
+
+.skill-image {
+  width: 30px;
+  margin-right: 12px;
+}
+.skill-image-revert {
+  filter: brightness(0) invert(1);
+}
+
+.skill-name {
+  font-size: 18px;
+  color: #FFF;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+  align-self: center;
+}
+
+.experience-content {
+  margin-top: 5vh;
+}
+
+.experience-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.experience-description {
+  font-size: 17px;
+}
+
+.experience-keywords {
+  font-style: italic;
+  font-size: 14px;
+  color: #AAA;
+}
+
+.experience-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.experience-link {
+  color: #FFF;
+  font-size: 15px;
+  font-style: italic;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.experience-image-container {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.experience-image {
+  width: auto;
+  height: 70vh;
+}
+
+.experience-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #222;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+footer {
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+#credits {
+  color: #CCC;
+  font-size: 15px;
+}
+
+#source {
+  color: #888;
+  font-size: 13px;
+}
+
+#source a {
+  color: #888;
+}
+
+#footer-github {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  #intro {
+    padding-left: 5%;
+    padding-right: 5%;
   }
-  to {
-    transform: rotate(360deg);
+
+  #intro-title {
+    font-size: 2.75em;
+    align-self: center;
+    text-align: center;
+  }
+
+  #intro-subtitle {
+    font-size: 2em;
+    align-self: center;
+    text-align: center;
+  }
+
+  #intro-contact {
+    font-size: 1.75em;
+    align-self: center;
+    text-align: center;
+  }
+
+  .section-header {
+    margin-top: 10vh;
+  }
+  .section-header:after {
+    width: 30%;
+    margin-top: 25px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  #sidebar-nav {
+    display: none;
+  }
+
+  .skills-col {
+    width: 100%;
+  }
+
+  .experience-image-container, .experience-content {
+    width: 100%;
+  }
+
+  .experience-image {
+    width: 100%;
+    height: auto;
+  }
+
+  #footer-github {
+    display: flex;
   }
 }
